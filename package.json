@@ -5,6 +5,7 @@
 		"packages/*"
 	],
 	"scripts": {
-		"server": "yarn workspace @todouin/backend start"
+		"server:dev": "yarn workspace @todouin/backend dev",
+		"server:start": "yarn workspace @todouin/backend start"
 	}
 }
