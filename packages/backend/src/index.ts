@@ -1,13 +1,8 @@
-import dotenv from 'dotenv';
-import express from 'express';
+import app from './Server';
+import Config from './configs';
 
-dotenv.config();
+const port = Config.PORT;
 
-const app = express();
-const PORT = process.env.PORT || 8000;
-
-app.get('/', (req, res) => res.send('Express + TypeScript Server'));
-
-app.listen(PORT, () => {
-	console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
+app.listen(port, () => {
+	console.log('Express server started on port: ' + port);
 });
