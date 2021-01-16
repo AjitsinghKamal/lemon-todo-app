@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"name": "lemon-todo",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"server": "yarn workspace @lemon-todo/backend start"
+	}
+}
