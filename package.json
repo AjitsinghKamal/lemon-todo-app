@@ -6,6 +6,8 @@
 	],
 	"scripts": {
 		"server:dev": "yarn workspace @todouin/backend dev",
-		"server:start": "yarn workspace @todouin/backend start"
+		"server:start": "yarn workspace @todouin/backend start",
+		"client:start": "yarn workspace @todouin/frontend react-scripts start",
+		"client:build": "yarn workspace @todouin/frontend react-scripts build"
 	}
 }
