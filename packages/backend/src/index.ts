@@ -1,8 +1,16 @@
 import app from './Server';
-import Config from './configs';
+import { PORT, DB_URL } from './configs';
+import { connectDb } from './models';
 
-const port = Config.PORT;
+async function init() {
+	try {
+		await connectDb(DB_URL);
+		app.listen(PORT, () => {
+			console.log(`Express server started on port: ${PORT}`);
+		});
+	} catch (e) {
+		console.error('Db connection failed', DB_URL);
+	}
+}
 
-app.listen(port, () => {
-	console.log('Express server started on port: ' + port);
-});
+init();

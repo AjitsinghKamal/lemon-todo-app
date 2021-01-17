@@ -2,7 +2,6 @@ import express, { NextFunction, Request, Response } from 'express';
 
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
-
 import StatusCodes from 'http-status-codes';
 
 import BaseRouter from './routes';
