@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react';
 
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-
 export default function DefaultHeader() {
 	return (
 		<header
@@ -18,14 +16,7 @@ export default function DefaultHeader() {
 					width: 120px;
 					height: 40px;
 				`}
-			>
-				<Logo
-					css={css`
-						width: 100%;
-						height: 100%;
-					`}
-				/>
-			</span>
+			></span>
 		</header>
 	);
 }
