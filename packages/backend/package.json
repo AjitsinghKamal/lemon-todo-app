@@ -1,5 +1,5 @@
 {
-	"name": "@lemon-todo/backend",
+	"name": "@todouin/backend",
 	"version": "1.0.0",
 	"description": "a todo task board",
 	"main": "index.js",

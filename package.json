@@ -1,10 +1,10 @@
 {
 	"private": true,
-	"name": "lemon-todo",
+	"name": "todouin",
 	"workspaces": [
 		"packages/*"
 	],
 	"scripts": {
-		"server": "yarn workspace @lemon-todo/backend start"
+		"server": "yarn workspace @todouin/backend start"
 	}
 }
