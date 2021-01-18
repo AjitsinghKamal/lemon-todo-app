@@ -1,6 +1,6 @@
 import app from './Server';
 import { PORT, DB_URL } from './configs';
-import { connectDb } from './models';
+import { connectDb } from './entities';
 
 async function init() {
 	try {
@@ -9,7 +9,7 @@ async function init() {
 			console.log(`Express server started on port: ${PORT}`);
 		});
 	} catch (e) {
-		console.error('Db connection failed', DB_URL);
+		console.error('Db connection failed');
 	}
 }
 

@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import StatusCodes from 'http-status-codes';
 
-import BaseRouter from './routes/version1';
+import BaseRouter from './routes/v1';
 
 const app = express();
 const { BAD_REQUEST } = StatusCodes;
