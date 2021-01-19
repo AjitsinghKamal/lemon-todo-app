@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { HomePage } from '../pages';
+import { HomePage, LoginPage } from '../pages';
 function App() {
 	return (
 		<Router>
 			<Switch>
+				<Route path="/login">
+					<LoginPage />
+				</Route>
 				<Route path="/">
 					<HomePage />
 				</Route>

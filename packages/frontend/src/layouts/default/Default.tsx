@@ -1,20 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react';
 
+import LayoutRoot from '../LayoutRoot';
 import Header from './DefaultHeader';
 
 export default function DefaultLayout({
 	children,
 }: React.PropsWithChildren<{}>) {
 	return (
-		<div
-			css={css`
-				display: grid;
-				width: 100vw;
-				height: 100vh;
+		<LayoutRoot
+			styl={css`
 				grid-template-rows: 80px 1fr;
-				max-width: 1560px;
-				margin: 0 auto;
 			`}
 		>
 			<Header />
@@ -25,6 +21,6 @@ export default function DefaultLayout({
 			>
 				{children}
 			</main>
-		</div>
+		</LayoutRoot>
 	);
 }

@@ -1,0 +1,40 @@
+$scale: 8, 10, 12, 16, 18, 20, 24, 28, 32, 36, 40;
+$radii: 0, 6, 10, 20;
+$ft-base: 16;
+
+@mixin make-scale() {
+	@each $size in $scale {
+		--s-#{$size}: #{$size}px;
+	}
+	--s-wfull: 100vw;
+	--s-hfull: 100vh;
+	--s-container: 1560px;
+}
+
+@mixin rem($ft-base) {
+	@each $size in $scale {
+		--ft-#{$size}: #{$size / $ft-base}rem;
+	}
+}
+
+@mixin radii {
+	@each $size in $radii {
+		--r-#{$size}: #{$size}px;
+	}
+}
+
+@mixin palette() {
+	--c-primary: #2648a8;
+	--c-text: #1f1f1f;
+	--c-w0: #fff;
+	--c-w1: #f2f2f2;
+	--shadow-p: 0 0 30px 10px #1e418f;
+}
+
+
+:root {
+	@include make-scale();
+	@include rem($ft-base);
+	@include palette();
+	@include radii();
+}
