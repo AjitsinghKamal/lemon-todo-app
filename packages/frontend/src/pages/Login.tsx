@@ -35,7 +35,7 @@ export default function Login() {
 						css={css`
 							height: 80%;
 							width: 80%;
-							color: var(--c-w1);
+							color: var(--c-w80);
 						`}
 					>
 						<h1
@@ -51,7 +51,7 @@ export default function Login() {
 								margin-top: 0;
 							`}
 						>
-							A minimalist approach to your Todo List
+							A Minimalist approach to your Todo Lists.
 						</h3>
 						<WelcomeSvg
 							css={css`

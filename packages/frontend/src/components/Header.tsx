@@ -25,7 +25,7 @@ export default function Header({
 					flex: 0 0 120px;
 					font-weight: 800;
 					color: ${brand === 'white'
-						? 'var(--c-w0)'
+						? 'var(--c-w100)'
 						: 'var(--c-primary)'};
 				`}
 			>

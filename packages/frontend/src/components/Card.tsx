@@ -15,7 +15,7 @@ export default function Card({
 			{...rest}
 			css={css`
 				border-radius: var(--r-20);
-				background: var(--c-w1);
+				background: var(--c-w80);
 				${styl};
 			`}
 		>

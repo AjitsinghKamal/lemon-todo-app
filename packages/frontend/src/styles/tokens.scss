@@ -1,4 +1,4 @@
-$scale: 8, 10, 12, 16, 18, 20, 24, 28, 32, 36, 40;
+$scale: 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 44, 48;
 $radii: 0, 6, 10, 20;
 $ft-base: 16;
 
@@ -25,10 +25,18 @@ $ft-base: 16;
 
 @mixin palette() {
 	--c-primary: #2648a8;
-	--c-text: #1f1f1f;
-	--c-w0: #fff;
-	--c-w1: #f2f2f2;
+	--c-secondary: #2a9d8f;
+	--c-muted: #b8c6f0;
+	--c-text100: #1f1f1f;
+	--c-text80: #1a1a1a;
+	--c-w100: #fff;
+	--c-w80: #f2f2f2;
+	--c-d100: #d1d1d1;
+	--c-y10: #faefd0;
 	--shadow-p: 0 0 30px 10px #1e418f;
+	--shadow-primary: 0 0 0px 2px var(--c-primary);
+	--shadow-input: 0 0 30px 0px var(--c-d100);
+	--shadow-input-focus: var(--shadow-input), var(--shadow-primary);
 }
 
 
