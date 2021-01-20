@@ -21,3 +21,7 @@ Open [http://localhost:8000](http://localhost:8000)
 ### Status
 
 This project is still in development and would be available soon.
+
+![Login](https://user-images.githubusercontent.com/18217523/105163951-86a31e80-5b3a-11eb-84bc-4cb12d9a791f.png)
+
+![Signup](https://user-images.githubusercontent.com/18217523/105164019-9c184880-5b3a-11eb-9d3e-fea57c049b2c.png)
