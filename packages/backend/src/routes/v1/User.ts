@@ -1,12 +1,18 @@
-import StatusCodes from 'http-status-codes';
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+
+import { getAuthSchema } from 'utils/validateUserRequest';
+import validate from 'middlewares/validate';
+import {
+	shouldCreateUser,
+	shouldLoginUser,
+} from 'entities/user/UserAuthController';
 
 const router = Router();
-const { BAD_REQUEST, CREATED, OK } = StatusCodes;
 
-router.get('/user', async (req: Request, res: Response) => {
-	const users = [];
-	return res.status(OK).json({ users });
-});
+router.get('/me');
+
+router.post('/user', getAuthSchema('signup'), validate, shouldCreateUser);
+
+router.post('/me', getAuthSchema('signin'), validate, shouldLoginUser);
 
 export default router;

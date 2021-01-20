@@ -3,7 +3,8 @@
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "dist",
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"baseUrl": "./src"
 	},
 	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules"]

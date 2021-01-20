@@ -1,38 +1,58 @@
+import { NextFunction, Request, Response } from 'express';
+import StatusCodes from 'http-status-codes';
+
 import { createList, update, removeList } from './TaskListService';
-import { Request } from 'express';
 
-export async function shouldGetList(req: Request) {
+const { OK } = StatusCodes;
+
+export async function shouldGetList(
+	req: Request,
+	res: Response,
+	next: NextFunction
+) {
 	try {
 		const data = await createList(req.body);
-		return data;
+		return res.status(OK).json({ data });
 	} catch (e) {
-		throw new Error(e);
+		next(e);
 	}
 }
 
-export async function shouldAddList(req: Request) {
+export async function shouldAddList(
+	req: Request,
+	res: Response,
+	next: NextFunction
+) {
 	try {
 		const data = await createList(req.body);
-		return data;
+		return res.status(OK).json({ data });
 	} catch (e) {
-		throw new Error(e);
+		next(e);
 	}
 }
 
-export async function shouldUpdateList(req: Request) {
+export async function shouldUpdateList(
+	req: Request,
+	res: Response,
+	next: NextFunction
+) {
 	try {
 		const data = await update(req.params.id, req.body);
-		return data;
+		return res.status(OK).json({ data });
 	} catch (e) {
-		throw new Error(e);
+		next(e);
 	}
 }
 
-export async function shouldDeleteList(req: Request) {
+export async function shouldDeleteList(
+	req: Request,
+	res: Response,
+	next: NextFunction
+) {
 	try {
 		const data = await removeList(req.params.id);
-		return data;
+		return res.status(OK).json({ data });
 	} catch (e) {
-		throw new Error(e);
+		next(e);
 	}
 }
