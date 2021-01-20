@@ -1,11 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Card from 'components/Card';
 import LoginPanel from './LoginPanel';
+import SignupPanel from './SignupPanel';
 
 export default function LoginContainer() {
+	const { path } = useRouteMatch();
 	return (
 		<Card
 			styl={css`
@@ -18,7 +20,10 @@ export default function LoginContainer() {
 			`}
 		>
 			<Switch>
-				<Route path="/">
+				<Route path={`${path}/signup`} exact>
+					<SignupPanel />
+				</Route>
+				<Route path={path} exact>
 					<LoginPanel />
 				</Route>
 			</Switch>

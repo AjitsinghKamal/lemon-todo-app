@@ -1,6 +1,7 @@
-export function makeError(err, code: number = -1) {
+export function makeError(msg, code: number = -1) {
 	return {
-		err,
+		status: 'error',
+		msg,
 		code,
 	};
 }

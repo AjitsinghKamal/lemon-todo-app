@@ -6,9 +6,12 @@ export default function validate(req, res, next) {
 	if (errors.isEmpty()) {
 		return next();
 	}
-	const errorList = errors.array().map((err) => ({ [err.param]: err.msg }));
-	return next({
-		status: StatusCodes.UNPROCESSABLE_ENTITY,
-		errorList,
+	const errorList = errors
+		.array({ onlyFirstError: true })
+		.map((err) => ({ [err.param]: err.msg }));
+	next({
+		code: 422,
+		status: 'error',
+		message: errorList,
 	});
 }

@@ -16,6 +16,9 @@ function Field({ label, name, ...rest }: React.PropsWithChildren<Props>) {
 				margin: var(--s-18) 0 var(--s-24);
 				display: flex;
 				flex-direction: column;
+				&:last-child {
+					margin-bottom: var(--s-16);
+				}
 			`}
 		>
 			<label

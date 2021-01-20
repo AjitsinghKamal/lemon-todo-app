@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from '@emotion/react';
+import { jsx } from '@emotion/react';
 import { useState, useCallback } from 'react';
 
 import Input from './Input';

@@ -12,6 +12,7 @@ export enum VARIANTS {
 
 type Props = {
 	styl?: SerializedStyles;
+	onClick?: <T>(p: T) => void;
 	bg?: VARIANTS.PRIMARY | VARIANTS.MUTED | VARIANTS.GHOST;
 	size?: VARIANTS.LARGE | VARIANTS.MED | VARIANTS.SMALL;
 };
@@ -25,8 +26,12 @@ export default function Button({
 	children,
 	bg = VARIANTS.PRIMARY,
 	size = VARIANTS.MED,
+	onClick,
 	...rest
 }: React.PropsWithChildren<Props>) {
+	const shouldHandleClick = (e: React.MouseEvent<HTMLElement>) => {
+		onClick && onClick(e);
+	};
 	return (
 		<button
 			{...rest}
@@ -36,6 +41,7 @@ export default function Button({
 				${SIZES[size]}
 				${styl};
 			`}
+			onClick={shouldHandleClick}
 		>
 			{children}
 		</button>

@@ -16,14 +16,14 @@ const signinSchema = {
 			errorMessage: 'You need your email to login.',
 		},
 		isEmail: {
-			bail: true,
+			errorMessage: 'Email looks bad. Please try another one!',
 		},
 	},
 };
 
 const newUserSchema = {
 	password: {
-		isEmpty: {
+		notEmpty: {
 			errorMessage: 'Please create a password.',
 		},
 		isLength: {
@@ -41,7 +41,7 @@ const newUserSchema = {
 				return true;
 			},
 		},
-		isEmpty: {
+		notEmpty: {
 			errorMessage: 'Please enter confirm password',
 		},
 	},
@@ -49,19 +49,16 @@ const newUserSchema = {
 		isAlphanumeric: {
 			negated: true,
 		},
-		isEmpty: {
+		notEmpty: {
 			errorMessage: 'Please choose a username',
 		},
 	},
 	email: {
-		isEmpty: {
+		notEmpty: {
 			errorMessage: 'Please enter your email',
 		},
-		isValid: {
-			errorMessage: 'Email looks bad. Please try another one!',
-		},
 		isEmail: {
-			bail: true,
+			errorMessage: 'Email looks bad. Please try another one!',
 		},
 	},
 };

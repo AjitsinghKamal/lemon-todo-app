@@ -3,9 +3,9 @@ import StatusCodes from 'http-status-codes';
 import bcrypt from 'bcryptjs';
 
 import { getUser, addUser } from './UserAuthService';
-import { KEY } from 'configs';
-import { makeJwt } from 'utils/generateJwt';
-import { makeError } from 'utils/generateResError';
+import { KEY } from '../../configs/index';
+import { makeJwt } from '../../utils/generateJwt';
+import { makeError } from '../../utils/generateResError';
 import { USER_EXISTS, USER_LOGIN_FAIL } from './constants';
 
 const { OK, CONFLICT, UNAUTHORIZED } = StatusCodes;
@@ -34,6 +34,7 @@ export async function shouldCreateUser(
 			data: { token, username, email },
 		});
 	} catch (e) {
+		console.log('ss', e);
 		next(e);
 	}
 }
