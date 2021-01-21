@@ -21,7 +21,12 @@ export default function TaskList({ selectedList: string }: Props) {
 	} = useFetch<TypeTaskList>();
 
 	return (
-		<div>
+		<div
+			css={css`
+				width: 45%;
+				max-width: 520px;
+			`}
+		>
 			<TaskInput title="" isCompleted={false} _id={-1} />
 			<ul>
 				{[].map((task: TypeTask) => (

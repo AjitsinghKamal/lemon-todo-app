@@ -36,10 +36,18 @@ function TaskInput({
 				&:last-child {
 					margin-bottom: var(--s-16);
 				}
+				width: 100%;
 			`}
 		>
-			<Checkbox />
-			<Input onChange={updateTaskEntry} value={entry} {...rest} />
+			<Input
+				onChange={updateTaskEntry}
+				value={entry}
+				{...rest}
+				prefix={<Checkbox />}
+				style={{
+					['--pad-left' as any]: '52px',
+				}}
+			></Input>
 		</li>
 	);
 }

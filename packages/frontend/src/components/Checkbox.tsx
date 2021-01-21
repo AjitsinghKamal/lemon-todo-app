@@ -6,7 +6,7 @@ type Props = {
 	value?: string;
 };
 
-function Input({
+export default function Checkbox({
 	onChange,
 	value = '',
 	...rest
@@ -16,32 +16,36 @@ function Input({
 		onChange && onChange(currentValue);
 	};
 	return (
-		<input
-			onChange={onChangHandler}
-			value={value}
-			{...rest}
-			css={inputCss}
-		/>
+		<div
+			css={css`
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				border-radius: var(--r-6);
+				box-shadow: 0 0 0 2px var(--c-d50);
+			`}
+		>
+			<label
+				htmlFor="checkbox"
+				css={css`
+					width: 100%;
+					height: 100%;
+				`}
+			>
+				<input type="checkbox" name="checkbox" css={inputCss} />
+			</label>
+		</div>
 	);
 }
 
 const inputCss = css`
-	padding: var(--s-16);
-	font-size: var(--ft-16);
-	border-radius: var(--r-10);
 	border: 0;
-	box-shadow: var(--shadow-input);
-	cursor: pointer;
-	transition: box-shadow 0.3s, background 0.3s;
-	&:focus {
-		outline: 0;
-		box-shadow: var(--shadow-input-focus);
-		background: var(--c-y10);
-	}
-	@media (min-width: 1200px) {
-		&:hover {
-			background: var(--c-y10);
-		}
-	}
+	clip: rect(0 0 0 0)';
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	whitespace: nowrap;
+	width: 1px;
 `;
-export default Input;
