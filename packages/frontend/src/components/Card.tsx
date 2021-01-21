@@ -1,15 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css, SerializedStyles } from '@emotion/react';
-
-type Props = {
-	styl?: SerializedStyles;
-};
+import { jsx, css } from '@emotion/react';
+import { ExtendStyle } from './types';
 
 export default function Card({
 	styl,
 	children,
 	...rest
-}: React.PropsWithChildren<Props>) {
+}: React.PropsWithChildren<ExtendStyle>) {
 	return (
 		<div
 			{...rest}

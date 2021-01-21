@@ -31,6 +31,8 @@ $ft-base: 16;
 	--c-text80: #1a1a1a;
 	--c-w100: #fff;
 	--c-w80: #f2f2f2;
+	--c-w90: #fcfaf3;
+	--c-w95: #fffbf3;
 	--c-d100: #d1d1d1;
 	--c-y10: #faefd0;
 	--shadow-p: 0 0 30px 10px #1e418f;
@@ -39,10 +41,18 @@ $ft-base: 16;
 	--shadow-input-focus: var(--shadow-input), var(--shadow-primary);
 }
 
+@mixin theme-light() {
+	--c-bg: var(--c-w100);
+	--c-sidebar: var(--c-w90);
+}
 
 :root {
 	@include make-scale();
 	@include rem($ft-base);
 	@include palette();
 	@include radii();
+}
+
+body {
+	@include theme-light();
 }

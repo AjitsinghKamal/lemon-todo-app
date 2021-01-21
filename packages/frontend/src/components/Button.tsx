@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css, SerializedStyles } from '@emotion/react';
+import { jsx, css } from '@emotion/react';
+import { ExtendStyle, IStyleGroup } from './types';
 
 export enum VARIANTS {
 	PRIMARY = 'primary',
@@ -11,15 +12,10 @@ export enum VARIANTS {
 }
 
 type Props = {
-	styl?: SerializedStyles;
 	onClick?: <T>(p: T) => void;
 	bg?: VARIANTS.PRIMARY | VARIANTS.MUTED | VARIANTS.GHOST;
 	size?: VARIANTS.LARGE | VARIANTS.MED | VARIANTS.SMALL;
-};
-
-interface propToStyleMap {
-	[key: string]: SerializedStyles;
-}
+} & ExtendStyle;
 
 export default function Button({
 	styl,
@@ -99,13 +95,13 @@ const ghostCss = css`
 	}
 `;
 
-const BG: propToStyleMap = {
+const BG: IStyleGroup = {
 	[VARIANTS.PRIMARY]: primaryCss,
 	[VARIANTS.MUTED]: mutedCss,
 	[VARIANTS.GHOST]: ghostCss,
 };
 
-const SIZES: propToStyleMap = {
+const SIZES: IStyleGroup = {
 	[VARIANTS.MED]: normalCss,
 	[VARIANTS.LARGE]: HugeCss,
 	[VARIANTS.SMALL]: TinyCss,

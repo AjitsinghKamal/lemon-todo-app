@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css, SerializedStyles } from '@emotion/react';
+import { ExtendStyle } from './types';
 
 type Props = {
-	styl?: SerializedStyles;
 	brand?: 'dark' | 'white';
-};
+} & ExtendStyle;
+
 export default function Header({
 	children,
 	styl,
